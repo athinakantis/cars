@@ -1,0 +1,444 @@
+
+
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font);  
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+:root {
+    --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --primaryColour: rgb(248, 245, 239);
+    --secondaryColour: #2c2c2c;
+    --subtle: #dadada;
+    --accentColour: #89571a;
+    --highlight: rgb(242, 255, 242);
+}
+
+
+
+
+
+/* Header Styling */
+header {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+
+/* Font Styling */
+h1 {
+    font-size: 1.4em;
+    margin: 5px 15px 0 10px;
+    display: inline;
+    align-self: flex-start;
+}
+
+h1, h2, h3 {
+    font-family: var(--font);
+    font-weight: 500;
+}
+
+h2 {
+    font-weight: 100;
+    margin: 0 0 2rem;
+}
+
+h3 {
+    margin: 0 0 10px;
+}
+
+p, input, select, button {
+    font-family: inherit;
+    font-weight: 500;
+}
+
+
+
+
+/* Hero Banner Styling */
+.heroBanner {
+    width: 100vw;
+    max-height: 300px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.heroBanner img {
+    object-position: center;
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+
+
+/* 
+Content Container
+*/
+.contentContainer {
+    margin: auto;
+    display: flex;
+    width: 80%;
+    column-gap: 10px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+/* 
+Listings Styling 
+*/
+
+#listingsTable {
+    margin: 40px 0 0;
+    max-width: 715px;
+}
+
+.listings {
+    flex: 1;
+    min-width: 623px;
+    min-height: 500px;
+    border: 1px solid var(--subtle);
+    padding: 20px;
+}
+
+.listings-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.listings h2 {
+    color: var(--secondaryColour);
+    width: max-content;
+}
+
+#returnIcon:hover {
+    cursor: pointer;
+}
+
+
+
+table {
+    border-collapse: collapse;
+    margin: 0 0 40px;
+    width: 100%;
+}
+
+thead td {
+    text-align: center;
+    background-color: var(--primaryColour)
+}
+
+td {
+    font-size: 0.8em;
+    border: 1px solid var(--subtle);
+    padding: 7px 9px;
+}
+
+td.hasDiscount > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+td.hasDiscount > div:after {
+    content: '-15%';
+    background-color: green;
+    color: var(--primaryColour);
+    padding: 2px;
+    border-radius: 3px;
+    text-align: end;
+    margin-left: 5px;
+}
+
+td.noDiscount {
+    text-align: center;
+}
+
+td > button {
+    background-color: transparent;
+    border: none;
+    font-weight: inherit;
+}
+
+
+#reply {
+    width: max-content;
+    height: max-content;
+    background-color: white;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid var(--subtle);
+    opacity: 0;
+    transition: all 1.2s;
+    max-width: 400px;
+    line-height: 1.5;
+}
+
+#reply.success {
+    background-color: var(--highlight);
+    opacity: 1;
+}
+
+#reply.error {
+    background-color: rgb(227, 188, 188);
+    opacity: 1;
+}
+
+
+
+
+/* 
+Search Form Styling 
+*/
+
+.search-header {
+ display: flex;
+ justify-content: space-between;
+}
+
+
+
+.searchContainer input[type='text'] {
+    width: 60%;
+}
+
+.searchBar {
+    display: flex;
+}
+
+#searchForm {
+    margin: 1rem 0;
+} 
+
+
+.searchContainer > form > div {
+    gap: 5px;
+}
+
+.searchContainer > .reply {
+    font-size: 0.9em;
+    margin: 20px 0;
+}
+
+#searchBar {
+    max-width: 275px;
+    margin: 0;
+}
+
+.searchBar button {
+    padding: 0.3rem;
+}
+
+#searchReply {
+    margin: 0 0 15px;
+}
+
+.filterContainer {
+    margin: 0 0 7px;
+    font-size: 0.8em;
+    max-width: 338px;
+}
+
+.filterContainer label {
+    margin: 0 15px 0 0;
+}
+
+
+
+
+
+
+
+
+
+/* 
+New Listing Form Styling 
+*/
+.newListingContainer {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid var(--subtle);
+    max-width: 400px;
+    max-height: fit-content;
+}
+
+#newListing > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+#newListing > div input, div select {
+    width: 100%;
+    max-width: 10rem;
+}
+
+#newListing {
+    display: flex;
+    flex-direction: column;
+}
+
+#newListing label {
+    min-width: 100px;
+}
+
+
+#newListing label, #newListing input, #newListing select {
+    font-size: 0.8em;
+}
+
+label {
+    margin: 0 0 10px;
+}
+
+input, select {
+    font-size: 1em;
+    padding: 3px;
+    margin: 0 0 5px;
+}
+
+#newListing [type='submit'] {    
+    margin: 20px auto 0px;
+}
+.newListingContainer .reply {
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.highlight {
+    background-color: var(--highlight)
+}
+
+button:not(td > button) {
+    border: none;
+    background-color: var(--primaryColour);
+    color: var(--secondaryColour);
+    padding: 1rem 2rem;
+    font-size: inherit;
+    border: 1px solid var(--subtle);
+    border-radius: 5px;
+}
+
+#redirectSearch, #redirectHome {
+    height: 100%;
+    padding: 0.5rem 1rem;
+
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+
+
+
+/* Footer */
+footer {
+    position: relative;
+    height: 10vh;
+}
+
+footer > p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+}
+
+
+@media only screen and (max-width: 780px) {
+    .heroBanner {
+        margin-bottom: 1rem;
+    }
+    .contentContainer {
+        padding: 2rem;
+        flex-direction: column;
+        margin: 0;
+        width: 100%;
+    }
+
+    .listings {
+        padding: 0;
+        border: none;
+        min-height: max-content;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .contentContainer > .listings {
+        min-width: auto;
+    }
+    
+
+    #listingsTable {
+        margin: 1rem 0;
+        display: flex;
+        table-layout: fixed;
+        max-width: 100%;
+    }
+
+    thead td:last-child {
+        height: 1.6rem;
+    }
+
+    td:last-child {
+        min-height: 2rem;
+    }
+
+    thead > tr {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+    }
+
+    thead > tr > td {
+        text-align: start;
+    }
+
+    tbody {
+        display: flex;
+    }
+
+    tbody > tr {
+        display: flex;
+        flex-direction: column;
+        min-width: min-content;
+    }
+
+    td {
+        padding: 7px 12px;
+    }
+
+    td.hasDiscount > div::after {
+        padding: 0;
+    }
+}
