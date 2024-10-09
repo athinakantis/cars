@@ -174,6 +174,8 @@ newListingForm.addEventListener('submit', (e) => {
 
 
 function resetListingsForm() {
+    modelFilter.classList.toggle('hidden');
+    modelFilter = undefined;
     ownerInput.value = '';
     licenseInput.value = '';
     makerInput.value = 'Default';
