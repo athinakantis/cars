@@ -29,7 +29,7 @@ class Car {
         this.year = year
         this.color = color
         this.price = price
-    } 
+    }
 
     overTenYears() {
         return thisYear - this.year > 10;
@@ -150,21 +150,21 @@ newListingForm.addEventListener('submit', (e) => {
         if (modelInput.value === 'Default') {
             throw new Error(`Missing model for new listing`)
         }
-        
-        
-        const newCar = new Car(licenseInput.value.toUpperCase().trim(), 
-                               makerInput.value.trim(), 
-                               modelInput.value, 
-                               ownerInput.value, 
-                               +yearInput.value, 
-                               colorInput.value.trim(), 
-                               +priceInput.value);
-        
+
+
+        const newCar = new Car(licenseInput.value.toUpperCase().trim(),
+            makerInput.value.trim(),
+            modelInput.value,
+            ownerInput.value,
+            +yearInput.value,
+            colorInput.value.trim(),
+            +priceInput.value);
+
         cars.push(newCar);
         localStorage.setItem('cars', JSON.stringify(cars))
         loadListings(cars)
         resetListingsForm();
-    
+
         showMessage(`Your new listing has been created!`);
     } catch (error) {
         showMessage(`Error: ${error.message}`, 'error');
@@ -195,7 +195,7 @@ function updateListings(car, highlight = false) {
         tr.classList.add('highlight')
     }
 
-    for (let i = 0; i < Object.values(car).length - 1; i++){
+    for (let i = 0; i < Object.values(car).length - 1; i++) {
         let td = document.createElement('td')
         td.textContent = Object.values(car)[i]
         tr.appendChild(td)
@@ -204,7 +204,7 @@ function updateListings(car, highlight = false) {
     const rmTd = document.createElement('td')
     const rmBtn = document.createElement('button')
     rmBtn.textContent = 'Delete'
-    
+
     tr.appendChild(priceTd);
     tr.appendChild(discountTd);
     rmTd.appendChild(rmBtn)
