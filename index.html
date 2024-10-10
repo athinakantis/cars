@@ -1,148 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Huberman Auto</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <main>
-        <header>
-            <h1>Huberman Auto</h1>
-        </header>
+      <header>
+        <h1>Huberman Auto</h1>
+      </header>
 
-        <div class="heroBanner">
-            <picture>
-                <source srcset="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.webp" />
-                <img src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg" alt="Car image" />
-            </picture>              
-        </div>
+      <div class="heroBanner">
+        <picture>
+          <source srcset="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.webp" />
+          <img
+            src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg"
+            alt="Car image"
+          />
+        </picture>
+      </div>
 
-        <div class="contentContainer">
-            <div class="listings">
-                <div class='listings-header'>
-                    <h2>Browse our listings</h2>
+      <div class="contentContainer">
+        <div class="listings">
+          <div class="listings-header">
+            <h2>Browse our listings</h2>
 
-                    <button id='redirectSearch'>Search</button>
-                </div>
+            <button id="redirectSearch">Search</button>
+          </div>
 
-                <div class='searchContainer hidden'>
-                    <div class="search-header">
-                        <h2>Search listings</h2>
-                        <button id='redirectHome'>Back</button>
-                    </div>
-    
-                    <form id='searchForm'>
-    
-                        <div class="filterContainer">
-                            <label>Filter by:</label>
-                            <input type="checkbox" name="filter" id="filterDiscount">
-                            <label for="filterDiscount">Discounted Cars</label>
-                        </div>
-                        
-                        <div class='searchBar'>
-                            <input type="text" id='searchBar' name='search' required>
-                            <button type="button" value="search" id='search'>Search</button>
-                        </div>
-                    </form>
-                    </div>
-
-
-                <table id='listingsTable'>
-                    <thead>
-                        <tr>
-                            <td>License</td>
-                            <td>Maker</td>
-                            <td>Model</td>
-                            <td>Owner</td>
-                            <td>Year</td>
-                            <td>Color</td>
-                            <td>Price</td>
-                            <td>Discount</td>
-                            <td>Action</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
+          <div class="searchContainer hidden">
+            <div class="search-header">
+              <h2>Search listings</h2>
+              <button id="redirectHome">Back</button>
             </div>
 
-    
-    
-            <div class="newListingContainer">
-                <h2>Create new listing </h2>
-                <form id='newListing'>
-                    <div>
-                        <label for="licensePlate">License Plate</label>
-                        <input type="text" id='licensePlate' required>
-                    </div>
-                    <div>
-                        <label for="maker">Maker</label>
-                        <select name="maker" id="maker" required>
-                            <option value="Default">Select a maker</option>
-                            <option value="Toyota">Toyota</option>
-                            <option value="Hyundai">Hyundai</option>
-                            <option value="KIA">KIA</option>
-                            <option value="TESLA">TESLA</option>
-                        </select>
-                    </div>
-                    <div>
+            <form id="searchForm">
+              <div class="filterContainer">
+                <label>Filter by:</label>
+                <input type="checkbox" name="filter" id="filterDiscount" />
+                <label for="filterDiscount">Discounted Cars</label>
+              </div>
 
-                    <label for='model'>Model</label>
-                    <select name="model" value='Default' id="model" required>
-                        <option value="Default">Model</option>
-                        <optgroup label='Toyota' class='hidden'>
-                            <option value="Crown">Crown</option>
-                            <option value="Corolla">Corolla</option>
-                            <option value="Camry">Camry</option>
-                            <option value="GR Supra">GR Supra</option>
-                        </optgroup>
-                        <optgroup label='Hyundai' class='hidden'>
-                            <option value="IONIC 6">IONIC 6</option>
-                            <option value="Santa Fe Hybrid">Santa Fe Hybdrid</option>
-                            <option value="NEXO">NEXO</option>
-                        </optgroup>
-                        <optgroup label='KIA' class='hidden'>
-                            <option value="NIRO">NIRO</option>
-                            <option value="Stinger">Stinger</option>
-                            <option value="RIO">RIO</option>
-                        </optgroup>
-                        <optgroup label='TESLA' class='hidden'>
-                            <option value="Model S">Model S</option>
-                            <option value="Model Y">Model Y</option>
-                            <option value="Model X">Model X</option>
-                        </optgroup>
-                    </select>
-                    </div>
-                    <div>
-                        <label for="customerName">Owner</label>
-                        <input type="text" id='customerName' minlength='1' pattern='^[A-Za-z ]{1,}$' required>
-                    </div>
-                    <div>
-                        <label for='year'>Year</label>
-                        <input required type="number" min='1886' id='year'>
-                    </div>
-                    <div>
-                        <label for="color">Color</label>
-                        <input type="text" id='color'>
-                    </div>
-                    <div>
-                        <label for="price">Price</label>
-                        <input required type="number" name="price" min='1' id="price">
-                    </div>
-                    <button type="submit" value="Create listing">Create Listing</button>
-                </form>
+              <div class="searchBar">
+                <input type="text" id="searchBar" name="search" required />
+                <button type="button" value="search" id="search">Search</button>
+              </div>
+            </form>
+          </div>
+
+          <table id="listingsTable">
+            <thead>
+              <tr>
+                <td>License</td>
+                <td>Maker</td>
+                <td>Model</td>
+                <td>Owner</td>
+                <td>Year</td>
+                <td>Color</td>
+                <td>Price</td>
+                <td>Discount</td>
+                <td>Action</td>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div class="newListingContainer">
+          <h2>Create new listing</h2>
+          <form id="newListing">
+            <div>
+              <label for="licensePlate">License Plate</label>
+              <input type="text" id="licensePlate" required />
             </div>
+            <div>
+              <label for="maker">Maker</label>
+              <select name="maker" id="maker" required>
+                <option value="">Select a maker</option>
+                <option value="Toyota">Toyota</option>
+                <option value="Hyundai">Hyundai</option>
+                <option value="KIA">KIA</option>
+                <option value="TESLA">TESLA</option>
+              </select>
+            </div>
+            <div>
+              <label for="model">Model</label>
+              <select name="model" id="model" required>
+                <option value="">Model</option>
+                <optgroup label="Toyota" class="hidden">
+                  <option value="Crown">Crown</option>
+                  <option value="Corolla">Corolla</option>
+                  <option value="Camry">Camry</option>
+                  <option value="GR Supra">GR Supra</option>
+                </optgroup>
+                <optgroup label="Hyundai" class="hidden">
+                  <option value="IONIC 6">IONIC 6</option>
+                  <option value="Santa Fe Hybrid">Santa Fe Hybdrid</option>
+                  <option value="NEXO">NEXO</option>
+                </optgroup>
+                <optgroup label="KIA" class="hidden">
+                  <option value="NIRO">NIRO</option>
+                  <option value="Stinger">Stinger</option>
+                  <option value="RIO">RIO</option>
+                </optgroup>
+                <optgroup label="TESLA" class="hidden">
+                  <option value="Model S">Model S</option>
+                  <option value="Model Y">Model Y</option>
+                  <option value="Model X">Model X</option>
+                </optgroup>
+              </select>
+            </div>
+            <div>
+              <label for="customerName">Owner</label>
+              <input
+                type="text"
+                id="customerName"
+                minlength="1"
+                pattern="^[A-Za-z ]{1,}$"
+                required
+              />
+            </div>
+            <div>
+              <label for="year">Year</label>
+              <input required type="number" min="1886" id="year" />
+            </div>
+            <div>
+              <label for="color">Color</label>
+              <input type="text" id="color" />
+            </div>
+            <div>
+              <label for="price">Price</label>
+              <input required type="number" name="price" min="1" id="price" />
+            </div>
+            <button type="submit" value="Create listing">Create Listing</button>
+          </form>
         </div>
+      </div>
 
-        <div id='reply'>
-        </div>
+      <div id="reply"></div>
     </main>
     <footer>
-        <p>Copyright &copy; Huberman Auto&trade; 2024</p>
+      <p>Copyright &copy; Huberman Auto&trade; 2024</p>
     </footer>
 
-    <script src='main.js'></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
