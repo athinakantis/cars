@@ -73,6 +73,7 @@ function showMessage(message, type = "success") {
 function loadListings(arr) {
     tableBody.innerHTML = "";
     arr.forEach((car) => updateListings(car));
+    listenRemove()
 }
 
 //
@@ -84,7 +85,6 @@ const optgroups = document.querySelectorAll("optgroup");
 let modelFilter;
 function filterModel() {
     const modeldropdown = Array.from(optgroups);
-    console.log(modeldropdown);
     if (modelFilter) {
         modelFilter.classList.toggle("hidden");
     }
@@ -138,8 +138,8 @@ function resetListingsForm() {
     modelFilter = undefined;
     ownerInput.value = "";
     licenseInput.value = "";
-    makerInput.value = "Default";
-    modelInput.value = "Default";
+    makerInput.value = ''
+    modelInput.value = ''
     colorInput.value = "";
     yearInput.value = "";
     priceInput.value = "";
@@ -171,10 +171,14 @@ function updateListings(car, highlight = false) {
     tr.appendChild(rmTd);
     tableBody.appendChild(tr);
 
+}
+
+function listenRemove() {
     const deleteBtn = document.querySelectorAll("td > button");
-    deleteBtn.forEach((button, index) =>
-        button.addEventListener("click", () => deleteListing(index))
-    );
+    deleteBtn.forEach((button, index) => {
+        button.addEventListener('click', () => deleteListing(index))
+    })
+
 }
 
 function hasDiscount(car) {
@@ -243,8 +247,7 @@ function toggleSearch() {
 }
 
 function deleteListing(rmIndex) {
-    cars = cars.filter((el, index) => index !== rmIndex);
-
+    let removed = cars.splice(rmIndex, 1)
     loadListings(cars);
     localStorage.setItem("cars", JSON.stringify(cars));
 
