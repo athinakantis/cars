@@ -247,7 +247,7 @@ function toggleSearch() {
 }
 
 function deleteListing(rmIndex) {
-    let removed = cars.splice(rmIndex, 1)
+    cars.splice(rmIndex, 1)
     loadListings(cars);
     localStorage.setItem("cars", JSON.stringify(cars));
 
