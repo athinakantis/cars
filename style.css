@@ -105,7 +105,7 @@ Prompt Styling
 }
 
 .prompt-container > div {
-  transform: translateY(50px);
+  transform: translateY(70px);
   opacity: 0;
   animation-timing-function: ease-out;
   text-align: center;
@@ -114,11 +114,12 @@ Prompt Styling
   padding: 2rem 1rem 3rem;
   border: 1px solid var(--subtle);
   border-radius: 10px;
-  transition: all 200ms;
+  transition: opacity 700ms;
+  transition: box-shadow 200ms;
   z-index: 2;
 }
+
 .prompt-container > div:hover {
-  z-index: 1;
   cursor: pointer;
   box-shadow: 15px 15px 20px rgba(0,0,0,0.1);
 }
