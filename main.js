@@ -253,3 +253,19 @@ function deleteListing(rmIndex) {
 
     showMessage(`Success: Listing was deleted`);
 }
+
+
+const prompts = document.querySelectorAll('.prompt-container > div')
+
+window.addEventListener('load', () => {
+    prompts.forEach((prompt) => {
+        prompt.animate([
+            {transform: 'translateY(0)',
+                opacity: 1
+            }
+        ], {
+            duration: 700,
+            fill: 'forwards'            
+        })
+    })
+})
