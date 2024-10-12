@@ -10,6 +10,7 @@ body {
   width: 100%;
   margin: auto;
   position: relative;
+  min-height: 100vh;
 }
 
 :root {
@@ -21,6 +22,8 @@ body {
   --accentColour: #89571a;
   --highlight: rgb(242, 255, 242);
 }
+
+
 
 /* Header Styling */
 header {
@@ -51,6 +54,7 @@ h2 {
 }
 
 h3 {
+  font-weight: 400;
   margin: 0 0 10px;
 }
 
@@ -59,7 +63,7 @@ input,
 select,
 button {
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Hero Banner Styling */
@@ -87,6 +91,34 @@ Content Container
   column-gap: 10px;
   row-gap: 20px;
   flex-wrap: wrap;
+}
+
+
+/*
+Prompt Styling
+*/
+.prompt-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.prompt-container > div {
+  margin: 0 1rem;
+  text-align: center;
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid var(--subtle);
+  border-radius: 10px;
+}
+
+.prompt-container .search {
+  position: relative;
+  top: -10px;
+}
+
+.prompt-container h2 {
+  margin: 0 0 0.5rem;
 }
 
 /* 
@@ -317,7 +349,7 @@ button:not(td > button) {
   border: none;
   background-color: var(--primaryColour);
   color: var(--secondaryColour);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   font-size: inherit;
   border: 1px solid var(--subtle);
   border-radius: 5px;
@@ -335,8 +367,6 @@ button:hover {
 
 /* Footer */
 footer {
-  position: relative;
-  height: 10vh;
 }
 
 footer > p {
