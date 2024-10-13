@@ -14,16 +14,14 @@ body {
 }
 
 :root {
-  --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   --primaryColour: rgb(248, 245, 239);
   --secondaryColour: #2c2c2c;
   --subtle: #dadada;
   --accentColour: #89571a;
   --highlight: rgb(242, 255, 242);
 }
-
-
 
 /* Header Styling */
 header {
@@ -39,6 +37,10 @@ h1 {
   margin: 5px 15px 0 10px;
   display: inline;
   align-self: flex-start;
+}
+
+h1:hover {
+  cursor: pointer;
 }
 
 h1,
@@ -93,18 +95,25 @@ Content Container
   flex-wrap: wrap;
 }
 
+.active:is(.browse, .search, .createContainer) {
+  display: block;
+}
 
 /*
 Prompt Styling
 */
-.prompt-container {
+.promptContainer {
+  display: none;
   width: 100%;
-  display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.prompt-container > div {
+.promptContainer.active {
+  display: flex;
+}
+
+.promptContainer > div {
   transform: translateY(70px);
   opacity: 0;
   animation-timing-function: ease-out;
@@ -119,36 +128,35 @@ Prompt Styling
   z-index: 2;
 }
 
-.prompt-container > div:hover {
+.promptContainer > div:hover {
   cursor: pointer;
-  box-shadow: 15px 15px 20px rgba(0,0,0,0.1);
+  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
 }
 
-.prompt-container .search {
+.promptContainer .search {
   position: relative;
   top: -10px;
   animation-delay: 200ms;
 }
 
-.prompt-container .create {
+.promptContainer .create {
   animation-delay: 400ms;
 }
 
-.prompt-container h2 {
+.promptContainer h2 {
   margin: 0 0 0.5rem;
 }
-
 
 /* 
 Listings Styling 
 */
-
 #listingsTable {
   margin: 40px 0 0;
   max-width: 715px;
 }
 
-.listings {
+.browse {
+  display: none;
   flex: 1;
   min-width: 623px;
   min-height: 500px;
@@ -164,10 +172,6 @@ Listings Styling
 .listings h2 {
   color: var(--secondaryColour);
   width: max-content;
-}
-
-#returnIcon:hover {
-  cursor: pointer;
 }
 
 table {
@@ -196,7 +200,7 @@ td.hasDiscount > div {
 }
 
 td.hasDiscount > div:after {
-  content: "-15%";
+  content: '-15%';
   background-color: green;
   color: var(--primaryColour);
   padding: 2px;
@@ -244,13 +248,16 @@ td > button {
 /* 
 Search Form Styling 
 */
+.search {
+  display: none;
+}
 
 .search-header {
   display: flex;
   justify-content: space-between;
 }
 
-.searchContainer input[type="text"] {
+.searchContainer input[type='text'] {
   width: 60%;
 }
 
@@ -297,7 +304,8 @@ Search Form Styling
 /* 
 New Listing Form Styling 
 */
-.newListingContainer {
+.createContainer {
+  display: none;
   background-color: white;
   padding: 1rem;
   border: 1px solid var(--subtle);
@@ -342,10 +350,10 @@ select {
   margin: 0 0 5px;
 }
 
-#newListing [type="submit"] {
+#newListing [type='submit'] {
   margin: 20px auto 0px;
 }
-.newListingContainer .reply {
+.createContainer .reply {
   margin: 20px 0;
 }
 

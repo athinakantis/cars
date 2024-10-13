@@ -5,47 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Huberman Auto</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="images/h-square.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/h-square.png" type="image/x-icon" />
   </head>
   <body>
-    <main>
-      <header>
-        <h1>Huberman Auto</h1>
-      </header>
+    <header>
+      <h1 class="logo">Huberman Auto</h1>
+    </header>
 
+    <main>
       <div class="heroBanner">
         <picture>
           <source srcset="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.webp" />
           <img
-          src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg"
-          alt="Car image"
+            src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg"
+            alt="Car image"
           />
         </picture>
       </div>
 
       <div class="contentContainer">
-        <div class="prompt-container">
-          <div class="browse">
+        <div class="promptContainer home active">
+          <div class="browsePrompt">
             <h2>Browse Listings</h2>
             <p>Explore our wide selection of quality used cars</p>
           </div>
-          <div class="search">
+          <div class="searchPrompt">
             <h2>Search Listings</h2>
             <p>Find the perfect car with just a few clicks</p>
           </div>
-          <div class="create">
+          <div class="createPrompt">
             <h2>Create a Listing</h2>
             <p>Ready to sell? List your car in minutes</p>
           </div>
         </div>
-        <div class="listings hidden">
+        <div class="browse">
           <div class="listings-header">
             <h2>Browse our listings</h2>
-
             <button id="redirectSearch">Search</button>
           </div>
 
-          <div class="searchContainer hidden">
+          <div class="search searchContainer">
             <div class="search-header">
               <h2>Search listings</h2>
               <button id="redirectHome">Back</button>
@@ -83,7 +82,7 @@
           </table>
         </div>
 
-        <div class="newListingContainer hidden">
+        <div class="create createContainer">
           <h2>Create new listing</h2>
           <form id="newListing">
             <div>
