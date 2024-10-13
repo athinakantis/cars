@@ -254,19 +254,11 @@ function deleteListing(rmIndex) {
     showMessage(`Success: Listing was deleted`);
 }
 
-
-
-
-
 // Animate Prompts on load
-const prompts = document.querySelectorAll('.prompt-container > div')
+const prompts = document.querySelectorAll('.promptContainer > div')
 window.addEventListener('load', () => {
     prompts.forEach((prompt, index) => {
-        prompt.animate([
-            {transform: 'translateY(0)',
-                opacity: 1
-            }
-        ], {
+        prompt.animate(fadeInEffect, {
             duration: 1000,
             fill: 'forwards',
             delay: index * 300,
@@ -274,3 +266,24 @@ window.addEventListener('load', () => {
         })
     })
 })
+
+const fadeInEffect = [{
+    transform: 'translateY(0)',
+    opacity: 1
+}]
+
+
+/* Page Functionality */
+const [homePage, browsePage, searchPage, createPage] = document.querySelectorAll('.home, .browse, .search, .create')
+let currentPage = homePage
+const [browsePrompt, searchPrompt, createPrompt] = prompts;
+browsePrompt.addEventListener('click', () => togglePage(browsePage))
+searchPrompt.addEventListener('click', () => togglePage(searchPage))
+createPrompt.addEventListener('click', () => togglePage(createPage))
+document.querySelector('.logo').addEventListener('click', () => togglePage(homePage))
+
+function togglePage(page) {
+    currentPage.classList.toggle('active');
+    page.classList.toggle('active');
+    currentPage = page;
+}
