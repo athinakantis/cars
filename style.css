@@ -95,8 +95,16 @@ Content Container
   flex-wrap: wrap;
 }
 
-.active:is(.browse, .search, .createContainer) {
+.active:is(.search, .createContainer) {
   display: block;
+}
+
+.browse {
+  display: none;
+}
+
+.active:is(.browse) {
+  display: flex;
 }
 
 /*
@@ -133,7 +141,7 @@ Prompt Styling
   box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1);
 }
 
-.promptContainer .search {
+.promptContainer .searchPrompt {
   position: relative;
   top: -10px;
   animation-delay: 200ms;
@@ -155,7 +163,7 @@ Listings Styling
   max-width: 715px;
 }
 
-.browse {
+.listingsContainer {
   display: none;
   flex: 1;
   min-width: 623px;
@@ -164,8 +172,11 @@ Listings Styling
   padding: 20px;
 }
 
+.listingsContainer:has(.active) {
+  display: block;
+}
+
 .listings-header {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -382,7 +393,7 @@ button:not(td > button) {
 }
 
 #redirectSearch,
-#redirectHome {
+#redirectBrowse {
   height: 100%;
   padding: 0.5rem 1rem;
 }

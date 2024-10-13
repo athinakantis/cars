@@ -237,14 +237,12 @@ function searchDiscounts() {
 //
 document
     .querySelector("#redirectSearch")
-    .addEventListener("click", toggleSearch);
-document.querySelector("#redirectHome").addEventListener("click", toggleSearch);
+    .addEventListener("click", () => {
+        togglePage(searchPage);
+        loadListings(cars)
+    });
+document.querySelector("#redirectBrowse").addEventListener("click", () => togglePage(browsePage));
 
-function toggleSearch() {
-    document.querySelector(".listings-header").classList.toggle("hidden");
-    document.querySelector(".searchContainer").classList.toggle("hidden");
-    loadListings(cars);
-}
 
 function deleteListing(rmIndex) {
     cars.splice(rmIndex, 1)
@@ -285,5 +283,10 @@ document.querySelector('.logo').addEventListener('click', () => togglePage(homeP
 function togglePage(page) {
     currentPage.classList.toggle('active');
     page.classList.toggle('active');
+    page.animate(fadeInEffect, {
+        duration: 1000,
+        fill: 'forwards',
+        easing: 'ease-out'
+    })
     currentPage = page;
 }

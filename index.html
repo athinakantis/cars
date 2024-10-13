@@ -12,17 +12,17 @@
       <h1 class="logo">Huberman Auto</h1>
     </header>
 
-    <main>
-      <div class="heroBanner">
-        <picture>
-          <source srcset="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.webp" />
-          <img
-            src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg"
-            alt="Car image"
-          />
-        </picture>
-      </div>
+    <div class="heroBanner">
+      <picture>
+        <source srcset="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.webp" />
+        <img
+          src="images/jon-flobrant-lRSChvh1Mhs-unsplash_02.jpg"
+          alt="Car image"
+        />
+      </picture>
+    </div>
 
+    <main>
       <div class="contentContainer">
         <div class="promptContainer home active">
           <div class="browsePrompt">
@@ -38,8 +38,9 @@
             <p>Ready to sell? List your car in minutes</p>
           </div>
         </div>
-        <div class="browse">
-          <div class="listings-header">
+
+        <div class="listingsContainer">
+          <div class="browse listings-header">
             <h2>Browse our listings</h2>
             <button id="redirectSearch">Search</button>
           </div>
@@ -47,7 +48,7 @@
           <div class="search searchContainer">
             <div class="search-header">
               <h2>Search listings</h2>
-              <button id="redirectHome">Back</button>
+              <button id="redirectBrowse">Back</button>
             </div>
 
             <form id="searchForm">
